@@ -3,6 +3,6 @@ import { pokemonSlice } from "./slices/pokemon";
 
 export const store = configureStore({
     reducer: {
-        pokemon: pokemonSlice.reducer,
+        pokemons: pokemonSlice.reducer,
     },
 });
