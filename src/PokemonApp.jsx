@@ -15,7 +15,7 @@ export const PokemonApp = () => {
 
   return (
     <>
-        <h1>PokemonApp</h1>
+        <h1>PokémonApp</h1>
         <hr />
         <span>Loading: { isLoading ? 'True': 'False' }</span>
 
