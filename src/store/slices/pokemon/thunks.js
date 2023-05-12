@@ -1,12 +1,18 @@
 import { pokemonApi } from "../../../api/pokemonApi";
-import { setPokemons, startLoadingPokemons } from "./pokemonSlice";
+import { startLoadingPokemons, searchPokemon } from "./pokemonSlice";
 
-export const getPokemons = ( page = 0 ) => {
-    return async( dispatch, getState ) => {
+export const getPokemon = ( valor = 'pikachu') => {
+    return async( dispatch ) => {
         dispatch( startLoadingPokemons() );
 
-        const { data } = await pokemonApi.get(`/pokemon?limit=10&offset=${ page * 10 }`);
-        console.log(data)
-        dispatch( setPokemons({ pokemons: data.results, page: page +1 }) );
+        const { data } = await pokemonApi.get(`/pokemon/${valor}`);
+        dispatch( searchPokemon({
+            pokemon: data, 
+            img: data.sprites.front_default, 
+            hp: data.stats[0].base_stat,
+            attack: data.stats[1].base_stat,
+            defense: data.stats[2].base_stat,
+            specialAttack: data.stats[3].base_stat,
+        }));
     };
 };
