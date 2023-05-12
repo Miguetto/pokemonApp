@@ -8,7 +8,7 @@ export const pokemonSlice = createSlice({
         hp: '',
         attack: '',
         defense: '',
-        specialAttack: '',
+        speed: '',
         isLoading: false,
     },
     reducers: {
@@ -22,7 +22,7 @@ export const pokemonSlice = createSlice({
             state.hp = action.payload.hp;
             state.attack = action.payload.attack;
             state.defense = action.payload.defense;
-            state.specialAttack = action.payload.specialAttack;
+            state.speed = action.payload.speed;
         }
     }
 });

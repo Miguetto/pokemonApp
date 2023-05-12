@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-body {
+:root {
   background-color: #eff3ff;
 }
 .container {
@@ -14,15 +14,15 @@ body {
   top: 50%;
   left: 50%;
 }
-#card {
+.card {
   position: relative;
   width: 100%;
   padding: 30px 20px;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  background: radial-gradient(circle at 50% 0%, rgb(1, 144, 255) 36%, rgb(255, 255, 255) 36%);
+  background: radial-gradient(circle at 50% 0%, rgb(247, 255, 1) 36%, rgb(255, 255, 255) 36%);
 }
-#card img {
+.card img {
   display: block;
   width: 180px;
   max-height: 200px;
@@ -67,7 +67,7 @@ body {
 .stats p {
   color: #404060;
 }
-#btn {
+.btn {
   display: block;
   padding: 15px 60px;
   font-size: 18px;

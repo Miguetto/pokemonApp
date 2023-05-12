@@ -5,7 +5,7 @@ import { getPokemon } from '../../store/slices/pokemon';
 const ResultPokemon = () => {
 
   const dispatch = useDispatch();
-  const { pokemon = [], img, hp, attack, defense, specialAttack, isLoading } = useSelector(state => state.pokemon);
+  const { pokemon = [], img, hp, attack, defense, speed, isLoading } = useSelector(state => state.pokemon);
 
   useEffect(() => {
     dispatch( getPokemon() );
@@ -14,9 +14,6 @@ const ResultPokemon = () => {
   return (
     <>
     <div className="container">
-      <h3>
-        { isLoading &&  <span>Buscando...</span>}
-      </h3>
         <div className="card">
           <p className="hp"> { hp } HP</p>
           <img src={ img } alt={ pokemon.name } className="card-body-img" />
@@ -35,8 +32,8 @@ const ResultPokemon = () => {
                 <p>DEFENSE</p>
               </div>
               <div>
-                <h3>{ specialAttack }</h3>
-                <p>SPECIAL ATTACK</p>
+                <h3>{ speed }</h3>
+                <p>SPEED</p>
               </div>
           </div>
         </div>
