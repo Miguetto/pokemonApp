@@ -13,37 +13,34 @@ const ResultPokemon = () => {
 
   return (
     <>
-    <main className="flex">
-
-    <article className="card">
+    <div className="container">
       <h3>
         { isLoading &&  <span>Buscando...</span>}
       </h3>
-        <img src="../../img/bg-pattern-card.svg" alt="imagen header card" className="card-header" />
-        <div className="card-body">
-            <img src={ img } alt={ pokemon.name } className="card-body-img" />
-            <h1 className="card-body-title">
-              { pokemon.name }
-              <span> { hp } HP</span>
-            </h1>
-            <p className="card-body-text">Type: { pokemon.base_experience } </p>
+        <div className="card">
+          <p className="hp"> { hp } HP</p>
+          <img src={ img } alt={ pokemon.name } className="card-body-img" />
+          <h2 className="poke-name">
+            { pokemon.name }
+          </h2>
+          <p className="types">{ pokemon.base_experience } Exp.</p>
+        
+          <div className="stats">
+              <div>
+                <h3>{ attack }</h3>
+                <p>ATTACK</p>
+              </div>
+              <div>
+                <h3>{ defense }</h3>
+                <p>DEFENSE</p>
+              </div>
+              <div>
+                <h3>{ specialAttack }</h3>
+                <p>SPECIAL ATTACK</p>
+              </div>
+          </div>
         </div>
-        <div className="card-footer">
-            <div className="card-footer-social">
-              <h3>ATTACK</h3>
-              <p>{ attack }</p>
-            </div>
-            <div className="card-footer-social">
-              <h3>DEFENSE</h3>
-              <p>{ defense }</p>
-            </div>
-            <div className="card-footer-social">
-              <h3>SPECIAL ATTACK</h3>
-              <p>{ specialAttack }</p>
-            </div>
-        </div>
-    </article>
-    </main>
+    </div>
     </>
   )
 }
