@@ -5,29 +5,30 @@ import { useDispatch } from 'react-redux';
 
 export const SearchPokemon = () => {
 
-    const [ namePokemon, setNamePokemon ] = useState('');
+    const [namePokemon, setNamePokemon] = useState('');
     const dispatch = useDispatch();
 
     return (
-        <div className="form-group">
-            <label htmlFor="search_pokemon" className="text-white">Buscar Pokémon</label>
-            <input type="text" className="form-control" id="search_pokemon"
-                value={namePokemon}
+        <>
+            <input 
+                type="text" 
+                className="form"
+                value={ namePokemon }
+                placeholder="Nombre del pokémon..."
                 onChange={
                     (e) => {
-                        e.preventDefault();
                         setNamePokemon(e.target.value);
                     }
                 }
             />
-            <button className="btn btn-primary mt3"
+            <button className="btn"
                 onClick={
                     () => {
                         dispatch(getPokemon(namePokemon));
                     }
                 }
             >Buscar</button>
-        </div>
+        </>
     )
 }
 

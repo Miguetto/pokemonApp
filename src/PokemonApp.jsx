@@ -5,13 +5,12 @@ export const PokemonApp = () => {
   
   return (
     <>
-        <hr />
-        <div className="col-10 mt-4 border-top pt-3">
+        <main className="container">
+          <section className="card">
+            <ResultPokemon></ResultPokemon>
+          </section>
           <SearchPokemon></SearchPokemon>
-        </div>
-        <div className="col-12">
-          <ResultPokemon></ResultPokemon>
-        </div>
+        </main>
     </>
   );
 }
