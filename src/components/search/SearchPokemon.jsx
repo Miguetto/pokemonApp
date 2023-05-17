@@ -7,6 +7,7 @@ export const SearchPokemon = () => {
 
     const [namePokemon, setNamePokemon] = useState('');
     const dispatch = useDispatch();
+    
 
     return (
         <>
@@ -17,7 +18,7 @@ export const SearchPokemon = () => {
                 placeholder="Nombre del pokémon..."
                 onChange={
                     (e) => {
-                        setNamePokemon(e.target.value);
+                        setNamePokemon(e.target.value.toLowerCase());
                     }
                 }
             />

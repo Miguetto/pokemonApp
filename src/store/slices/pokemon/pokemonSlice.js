@@ -9,6 +9,7 @@ export const pokemonSlice = createSlice({
         attack: '',
         defense: '',
         speed: '',
+        type: '',
         isLoading: false,
     },
     reducers: {
@@ -23,6 +24,7 @@ export const pokemonSlice = createSlice({
             state.attack = action.payload.attack;
             state.defense = action.payload.defense;
             state.speed = action.payload.speed;
+            state.type = action.payload.type;
         }
     }
 });

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getPokemon } from '../../store/slices/pokemon';
+import { useState } from 'react';
 
 const ResultPokemon = () => {
 

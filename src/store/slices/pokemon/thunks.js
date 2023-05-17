@@ -13,6 +13,7 @@ export const getPokemon = ( valor = 'pikachu') => {
             attack: data.stats[1].base_stat,
             defense: data.stats[2].base_stat,
             speed: data.stats[5].base_stat,
+            type: data.types[0].type.name,
         }));
     };
 };
