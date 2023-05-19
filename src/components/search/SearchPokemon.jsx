@@ -11,7 +11,7 @@ export const SearchPokemon = () => {
 
     return (
         <>
-            <input 
+            <input
                 type="text" 
                 className="form"
                 value={ namePokemon }

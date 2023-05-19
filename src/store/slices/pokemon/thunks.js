@@ -1,13 +1,15 @@
 import { pokemonApi } from "../../../api/pokemonApi";
-import { startLoadingPokemons, searchPokemon } from "./pokemonSlice";
+import { searchPokemon } from "./pokemonSlice";
 
 export const getPokemon = ( valor = 'pikachu') => {
     return async( dispatch ) => {
-        dispatch( startLoadingPokemons() );
 
-        const { data } = await pokemonApi.get(`/pokemon/${valor}`);
+        const { data } = await pokemonApi.get(`/pokemon/${valor}`).catch(error => {
+            alert('Pokémon no encontrado, revisa bien el nombre.')
+        });
         dispatch( searchPokemon({
-            pokemon: data, 
+            pokemon: data,
+            types: data.types, 
             img: data.sprites.other.dream_world.front_default, 
             hp: data.stats[0].base_stat,
             attack: data.stats[1].base_stat,
